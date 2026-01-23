@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import { LuInstagram } from "react-icons/lu";
 import { BsTwitterX } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
+import { SiGmail, SiWhatsapp } from "react-icons/si";
 
 export default function ContactInfo() {
   const [copied, setCopied] = useState("");
@@ -95,7 +95,7 @@ export default function ContactInfo() {
             className="p-2 rounded-lg bg-green-500/20 hover:bg-green-500/30 transition"
             title="WhatsApp"
           >
-            <MessageCircle size={18} className="text-green-400" />
+           <SiWhatsapp size={18} className="text-green-400" />
           </a>
 
           <button
