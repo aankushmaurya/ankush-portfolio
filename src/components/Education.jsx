@@ -30,7 +30,7 @@ export default function Educationclg() {
 
         <div className="text-center sm:text-left">
           <h3 className="text-lg font-bold text-gray-100">
-            Institute of Engineering & Technology, Lucknow - 226021
+            BN College of Engineering & Technology, Lucknow - 226201
           </h3>
 
           <p className="text-gray-300">

@@ -50,8 +50,8 @@ Status: Open to exciting opportunities 🚀
   }, [running]);
 
   return (
-    <div className="flex justify-center mt-10 px-2">
-      <div className="w-full max-w-5xl rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+    <div className="flex justify-center gap-1 px-2">
+      <div className="w-full  rounded-2xl overflow-hidden border border-white/10 shadow-xl">
       
         <div
           className="flex items-center justify-between px-6 py-3

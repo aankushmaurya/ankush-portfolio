@@ -1,25 +1,27 @@
 "use client";
 
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
-import { FaReact } from "react-icons/fa6";
-import { TbBrandNextjs } from "react-icons/tb";
-import { FaNodeJs } from "react-icons/fa6";
-import { SiExpress } from "react-icons/si";
-import { TbBrandSocketIo } from "react-icons/tb";
-import { SiDjango } from "react-icons/si";
-import { FaPython } from "react-icons/fa6";
-import { SiSelenium } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { SiPostgresql } from "react-icons/si";
-import { SiSqlite } from "react-icons/si";
-import { RiTailwindCssLine } from "react-icons/ri";
-import { SiPrisma } from "react-icons/si";
-import { FaDocker } from "react-icons/fa";
-import { FaGitAlt } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiExpress,
+  SiDjango,
+  SiSelenium,
+  SiMongodb,
+  SiPostgresql,
+  SiSqlite,
+  SiPrisma,
+  SiCanva,
+} from "react-icons/si";
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDocker,
+  FaGitAlt,
+} from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-import { TbBrandCpp } from "react-icons/tb";
-import { SiCanva } from "react-icons/si";
+import { TbBrandNextjs, TbBrandSocketIo, TbBrandCpp } from "react-icons/tb";
+import { RiTailwindCssLine } from "react-icons/ri";
 
 const skills = [
   { name: "JavaScript", icon: IoLogoJavascript, color: "text-yellow-400" },
@@ -47,25 +49,29 @@ const skills = [
 
 export default function Skills() {
   return (
-    <div className="rounded-2xl border border-white/10 bg-linear-to-br from-[#020617] to-[#020617]/60 p-10 shadow-xl">
+    <div className="rounded-2xl border border-white/10 bg-linear-to-br from-[#020617] to-[#020617]/60 p-6 sm:p-10 shadow-xl">
       {/* Heading */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-10">
         <p className="text-sm text-gray-400">Explore my</p>
-        <h2 className="text-4xl font-bold text-pink-500">Skills</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-pink-500">Skills</h2>
       </div>
 
-      {/* Skills Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 place-items-center">
+      {/* SKILLS GRID */}
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 sm:gap-8 place-items-center">
         {skills.map((skill, index) => {
           const Icon = skill.icon;
 
           return (
             <div
               key={index}
-              className="flex flex-col items-center gap-3 text-sm text-gray-200 hover:scale-105 transition-transform duration-200"
+              className="flex flex-col items-center gap-2 text-xs sm:text-sm text-gray-200 hover:scale-105 transition-transform duration-200"
             >
-              <Icon size={48} className={skill.color} />
-              <span className="text-center">{skill.name}</span>
+              <Icon
+                className={skill.color}
+                size={36} // 📱 mobile
+              />
+
+              <span className="text-center leading-tight">{skill.name}</span>
             </div>
           );
         })}
