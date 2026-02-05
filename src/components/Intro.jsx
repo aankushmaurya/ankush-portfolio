@@ -8,8 +8,8 @@ import { SiGmail } from "react-icons/si";
 
 export default function Intro() {
   return (
-<section
-  className="
+    <section
+      className="
     relative
     rounded-2xl
     border border-white/10
@@ -17,8 +17,7 @@ export default function Intro() {
     p-5 shadow-xl
     overflow-hidden
   "
->
-
+    >
       {/* BACKGROUND GLOWS */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full" />
@@ -57,16 +56,17 @@ export default function Intro() {
           {/* BIO */}
           <div className="text-gray-100 max-w-xl leading-relaxed space-y-4 mb-6">
             <p>
-              One who knows frontend is a frontend developer, one who knows
-              backend is a backend developer and one who doesn&apos;t know both
-              is a full stack developer.{" "}
-              <span className="text-gray-400">– JK</span>
+              A frontend developer masters the UI, a backend developer masters
+              the logic, and a full-stack developer learns to balance both —
+              sometimes imperfectly.
+              <span className="text-gray-400"> — Just a developer joke 😉</span>
             </p>
 
             <p>
-              Hi there! 👋 I&apos;m a full-stack developer who enjoys dabbling
-              in both frontend and backend, but let&apos;s be real — the backend
-              is where the magic (and my heart) truly resides.
+              Hi! 👋 I’m a full-stack developer with experience across both
+              frontend and backend technologies. While I enjoy building clean
+              and responsive user interfaces, my true strength and passion lie
+              in designing scalable, efficient backend systems.
             </p>
           </div>
 
@@ -82,9 +82,7 @@ export default function Intro() {
               <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
             </span>
-            <span className=" text-gray-400 ">
-              Available for new projects
-            </span>
+            <span className=" text-gray-400 ">Available for new projects</span>
           </div>
 
           {/* SOCIAL LINKS */}
