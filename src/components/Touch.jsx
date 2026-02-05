@@ -6,7 +6,7 @@ import { LuInstagram } from "react-icons/lu";
 import { BsTwitterX } from "react-icons/bs";
 import { SiGmail, SiWhatsapp } from "react-icons/si";
 
-export default function ContactInfo() {
+export default function Touch() {
   const [copied, setCopied] = useState("");
 
   const copyText = (text) => {

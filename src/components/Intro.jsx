@@ -1,5 +1,4 @@
 "use client";
-
 import { MapPin } from "lucide-react";
 import TopBar from "./Topbar";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
@@ -78,12 +77,12 @@ export default function Intro() {
           </div>
 
           {/* AVAILABILITY */}
-          <div className="flex items-center gap-2 mb-5">
+          <div className="  flex items-center gap-2 mb-5">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
             </span>
-            <span className=" text-gray-400 mb-2">
+            <span className=" text-gray-400 ">
               Available for new projects
             </span>
           </div>

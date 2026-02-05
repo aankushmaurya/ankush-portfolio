@@ -79,8 +79,6 @@ Status: Open to exciting opportunities 🚀
             <BsPlayFill /> RUN
           </button>
         </div>
-
-        {/* CODE AREA (BIGGER + JELLYFISH FEEL) */}
         <pre className="p-8 text-sm md:text-[15px] font-mono leading-relaxed bg-[#0d111a] text-[#adbac7]">
           <span className="text-purple-400">class</span>{" "}
           <span className="text-cyan-300">Freelancer</span>:{"\n"}{" "}
@@ -94,7 +92,7 @@ Status: Open to exciting opportunities 🚀
           {"\n\n"} <span className="text-purple-400">def</span>{" "}
           <span className="text-yellow-300">display_profile</span>(self):
           {"\n"} <span className="text-blue-400">print</span>(f"Hey, this is{" "}
-          {self.name}")
+          Ankush Maurya")
           {"\n"} <span className="text-blue-400">print</span>(self.location)
           {"\n"} <span className="text-blue-400">print</span>(self.role)
           {"\n\n"}freelancer = <span className="text-cyan-300">Freelancer</span>

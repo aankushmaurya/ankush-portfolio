@@ -1,23 +1,18 @@
-"use client";
-import dynamic from "next/dynamic";
-
-const Intro = dynamic(() => import("@/components/Intro"), { ssr: false });
-const About = dynamic(() => import("@/components/About"), { ssr: false });
-const Skills = dynamic(() => import("@/components/Skills"), { ssr: false });
-const Education = dynamic(() => import("@/components/Education"), {
-  ssr: false,
-});
-const Project = dynamic(() => import("@/components/Project"), { ssr: false });
-const Touch = dynamic(() => import("@/components/Touch"), { ssr: false });
+import AboutMeCode from "@/components/About";
+import Educationclg from "@/components/Education";
+import Intro from "@/components/Intro";
+import Project from "@/components/Project";
+import Skills from "@/components/Skills";
+import Touch from "@/components/Touch";
 
 function page() {
   return (
     <div className="flex justify-center gap-2">
       <div className="w-full lg:w-1/2 h-auto p-2  space-y-1">
         <Intro />
-        <About />
+        <AboutMeCode />
         <Skills />
-        <Education />
+        <Educationclg />
         <Project />
         <Touch />
       </div>
