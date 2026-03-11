@@ -17,13 +17,12 @@ and crafting smooth, responsive frontends.
 I believe clean architecture, performance,
 and reliability define great software.
 
-Status: Open to exciting opportunities 🚀
-`;
+Status: Open to exciting opportunities `;
 
   const [output, setOutput] = useState("");
   const [running, setRunning] = useState(false);
   const [compiling, setCompiling] = useState(false);
-  const [showOutput, setShowOutput] = useState(true);
+  const [showOutput, setShowOutput] = useState(false);
 
   useEffect(() => {
     if (!running) return;
@@ -31,11 +30,14 @@ Status: Open to exciting opportunities 🚀
     setOutput("");
     setShowOutput(true);
     setCompiling(true);
+
+    let interval;
+
     const compileTimeout = setTimeout(() => {
       setCompiling(false);
 
       let index = 0;
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         setOutput((prev) => prev + fullOutput[index]);
         index++;
 
@@ -46,13 +48,16 @@ Status: Open to exciting opportunities 🚀
       }, 22);
     }, 1200);
 
-    return () => clearTimeout(compileTimeout);
+    return () => {
+      clearTimeout(compileTimeout);
+      if (interval) clearInterval(interval);
+    };
   }, [running]);
 
   return (
-    <div className="flex justify-center gap-1 px-2">
-      <div className="w-full  rounded-2xl overflow-hidden border border-white/10 shadow-xl">
-      
+    <div className="flex justify-center px-2">
+      <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-[#0d111a]">
+        {/* HEADER */}
         <div
           className="flex items-center justify-between px-6 py-3
           bg-linear-to-br from-[#020617] via-[#050b1d] to-black
@@ -76,60 +81,83 @@ Status: Open to exciting opportunities 🚀
               border border-white/20 rounded-lg text-sm text-white
               hover:bg-white hover:text-black transition disabled:opacity-50"
           >
-            <BsPlayFill /> RUN
+            <BsPlayFill />
+            {running ? "RUNNING..." : "RUN"}
           </button>
         </div>
-        <pre className="p-8 text-sm md:text-[15px] font-mono leading-relaxed bg-[#0d111a] text-[#adbac7]">
-          <span className="text-purple-400">class</span>{" "}
-          <span className="text-cyan-300">Freelancer</span>:{"\n"}{" "}
-          <span className="text-purple-400">def</span>{" "}
-          <span className="text-yellow-300">__init__</span>(self):
-          {"\n"} self.name = <span className="text-green-400">"Ankush"</span>
-          {"\n"} self.location ={" "}
-          <span className="text-green-400">"Lucknow, India"</span>
-          {"\n"} self.role ={" "}
-          <span className="text-green-400">"Full-Stack Developer"</span>
-          {"\n\n"} <span className="text-purple-400">def</span>{" "}
-          <span className="text-yellow-300">display_profile</span>(self):
-          {"\n"} <span className="text-blue-400">print</span>(f"Hey, this is{" "}
-          Ankush Maurya")
-          {"\n"} <span className="text-blue-400">print</span>(self.location)
-          {"\n"} <span className="text-blue-400">print</span>(self.role)
-          {"\n\n"}freelancer = <span className="text-cyan-300">Freelancer</span>
-          ()
-          {"\n"}freelancer.
-          <span className="text-yellow-300">display_profile</span>()
-        </pre>
 
-        {/* OUTPUT */}
-        {(output || compiling) && showOutput && (
-          <div className="border-t border-white/10 bg-[#0d111a]">
-            {/* OUTPUT HEADER */}
-            <div className="flex justify-between items-center px-4 py-2 text-xs text-gray-400">
-              <span>Program Output</span>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setShowOutput(false)}
-                  className="hover:text-white"
-                  title="Minimize"
-                >
-                  <Minus size={14} />
-                </button>
-                <button
-                  onClick={() => setOutput("")}
-                  className="hover:text-white"
-                  title="Close"
-                >
-                  <X size={14} />
-                </button>
-              </div>
-            </div>
-
-            <pre className="px-6 pb-6 text-sm font-mono text-green-400 whitespace-pre-wrap">
-              {compiling ? "Compiling program...\n\n" : output}
+        {/* BODY */}
+        <div className="flex flex-col md:flex-row min-h-[420px]">
+          {/* CODE PANEL */}
+          <div
+            className={`transition-all duration-300 ${
+              showOutput ? "md:w-1/2 w-full" : "w-full"
+            }`}
+          >
+            <pre className="h-full p-8 text-sm md:text-[15px] font-mono leading-relaxed bg-[#0d111a] text-[#adbac7] overflow-x-auto">
+              <span className="text-purple-400">class</span>{" "}
+              <span className="text-cyan-300">Freelancer</span>:{"\n"}{" "}
+              <span className="text-purple-400">def</span>{" "}
+              <span className="text-yellow-300">__init__</span>(self):
+              {"\n"}    self.name ={" "}
+              <span className="text-green-400">"Ankush"</span>
+              {"\n"}    self.location ={" "}
+              <span className="text-green-400">"Lucknow, India"</span>
+              {"\n"}    self.role ={" "}
+              <span className="text-green-400">"Full-Stack Developer"</span>
+              {"\n\n"}    <span className="text-purple-400">def</span>{" "}
+              <span className="text-yellow-300">display_profile</span>(self):
+              {"\n"}        <span className="text-blue-400">print</span>(
+              <span className="text-green-400">f"Hey, this is Ankush"</span>)
+              {"\n"}        <span className="text-blue-400">print</span>(
+              self.location)
+              {"\n"}        <span className="text-blue-400">print</span>(
+              self.role)
+              {"\n\n"}freelancer ={" "}
+              <span className="text-cyan-300">Freelancer</span>()
+              {"\n"}freelancer.
+              <span className="text-yellow-300">display_profile</span>()
             </pre>
           </div>
-        )}
+
+          {/* OUTPUT PANEL */}
+          {showOutput && (
+            <div className="w-full md:w-1/2 border-t md:border-t-0 md:border-l border-white/10 bg-[#0b1220] flex flex-col">
+              {/* OUTPUT HEADER */}
+              <div className="flex justify-between items-center px-4 py-3 border-b border-white/10 text-xs text-gray-400">
+                <span>Console</span>
+
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setShowOutput(false)}
+                    className="hover:text-white"
+                    title="Minimize"
+                  >
+                    <Minus size={14} />
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowOutput(false);
+                      setOutput("");
+                      setCompiling(false);
+                      setRunning(false);
+                    }}
+                    className="hover:text-white"
+                    title="Close"
+                  >
+                    <X size={14} />
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex-1 p-6 overflow-auto">
+                <pre className="text-sm font-mono text-green-400 whitespace-pre-wrap">
+                  {compiling ? "Compiling program...\n\n" : output || "No output yet."}
+                </pre>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
