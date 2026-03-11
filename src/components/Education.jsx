@@ -13,7 +13,7 @@ export default function Educationclg() {
       <h1 className="text-center text-4xl font-bold text-pink-500 mb-5">
         Education
       </h1>
-
+       {/* <div className="w-40  h-1 bg-linear-to-r from-pink-500 to-blue-500 mx-auto mt-4 rounded-full"></div> */}
       <div className="flex flex-col sm:flex-row items-center gap-6">
         <div className="shrink-0">
           <img
