@@ -88,7 +88,7 @@ export default function Intro() {
           {/* SOCIAL LINKS */}
           <div className="flex items-center gap-5 text-xl text-gray-300">
             <a
-              href="https://www.linkedin.com/in/ankush-maurya-0841b3265/"
+              href="https://www.linkedin.com/in/mauryaankush"
               aria-label="LinkedIn profile"
               target="_blank"
               rel="noopener noreferrer"
@@ -98,14 +98,16 @@ export default function Intro() {
             </a>
 
             <a
-              href="#"
+              href="https://www.instagram.com/mr.unstopable0/"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram profile"
               className=" hover:text-pink-500 transition"
             >
               <LuInstagram />
             </a>
 
-            <a
+            {/* <a
               href="https://x.com/Ankush666914"
               aria-label="Twitter profile"
               target="_blank"
@@ -113,10 +115,10 @@ export default function Intro() {
               className="hover:text-pink-500 transition"
             >
               <BsTwitterX />
-            </a>
+            </a> */}
 
             <a
-              href="https://github.com/ankushmaurya8840"
+              href="https://github.com/aankushmaurya"
               aria-label="GitHub profile"
               target="_blank"
               rel="noopener noreferrer"
@@ -126,7 +128,7 @@ export default function Intro() {
             </a>
 
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=ankushmaurya406@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=a.mauryaankush@gmail.com"
               aria-label="Send email"
               target="_blank"
               rel="noopener noreferrer"

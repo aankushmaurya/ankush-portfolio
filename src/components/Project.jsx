@@ -12,7 +12,7 @@ function Project() {
       description:
         "Developed a public-facing hospital website with seamless online appointment booking.",
       image: "p1.png",
-      liveLink: "https://shivamakshayvat-dev.vercel.app/",
+      liveLink: "https://www.shivamakshayvat.in/",
       techStack: [
         { name: "NextJS", icon: <SiNextdotjs className="text-white text-lg" /> },
         {

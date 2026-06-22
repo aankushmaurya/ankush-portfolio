@@ -114,44 +114,54 @@ export default function Touch() {
       <div className="mt-5 flex flex-col items-center gap-3">
         <div className="flex items-center justify-center gap-5 text-xl text-gray-400">
           <a
-            href="https://www.linkedin.com/in/ankush-maurya-0841b3265/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-pink-500 transition"
-          >
-            <FaLinkedinIn />
-          </a>
+              href="https://www.linkedin.com/in/mauryaankush"
+              aria-label="LinkedIn profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 transition"
+            >
+              <FaLinkedinIn />
+            </a>
 
-          <a href="#" className="hover:text-pink-500 transition">
-            <LuInstagram />
-          </a>
+            <a
+              href="https://www.instagram.com/mr.unstopable0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram profile"
+              className=" hover:text-pink-500 transition"
+            >
+              <LuInstagram />
+            </a>
 
-          <a
-            href="https://x.com/Ankush666914"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-pink-500 transition"
-          >
-            <BsTwitterX />
-          </a>
+            {/* <a
+              href="https://x.com/Ankush666914"
+              aria-label="Twitter profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 transition"
+            >
+              <BsTwitterX />
+            </a> */}
 
-          <a
-            href="https://github.com/ankushmaurya8840"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-pink-500 transition"
-          >
-            <FaGithub />
-          </a>
+            <a
+              href="https://github.com/aankushmaurya"
+              aria-label="GitHub profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 transition"
+            >
+              <FaGithub />
+            </a>
 
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=ankushmaurya406@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-pink-500 transition"
-          >
-            <SiGmail />
-          </a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=a.mauryaankush@gmail.com"
+              aria-label="Send email"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 transition"
+            >
+              <SiGmail />
+            </a>
         </div>
 
         <span className="text-xs text-gray-400 text-center">
