@@ -7,9 +7,9 @@ export default function TopBar() {
           {/* LOGO */}
           <div className="flex items-center shrink-0">
             <img
-              src="/logo1.png"
+              src="/Mylogo.jpeg"
               alt="Logo"
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border border-white/10"
             />
           </div>
           <nav className="flex items-center gap-4 sm:gap-6 text-sm text-gray-100">

@@ -42,13 +42,17 @@ export const metadata = {
     description: "Portfolio of Ankush Maurya, BNCET, Lucknow.",
     images: [
       {
-        url: "/me.jpeg",
+        url: "/Mylogo.jpeg",
         width: 1200,
         height: 630,
-        alt: "Ankush Maurya - Hero Image",
+        alt: "Ankush Maurya - Logo",
       },
     ],
     type: "website",
+  },
+  icons: {
+    icon: "/icon-192x192.png",
+    apple: "/apple-icon.png",
   },
   appleWebApp: {
     capable: true,
@@ -62,7 +66,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Ankush Maurya | Portfolio",
     description: "Portfolio of Ankush Maurya, BNCET, Lucknow.",
-    images: ["/me.jpeg"],
+    images: ["/Mylogo.jpeg"],
   },
 };
 
