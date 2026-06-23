@@ -41,6 +41,17 @@ export default function Loader() {
       }`}
     >
       <div className="relative flex flex-col items-center">
+        {/* Logo container with a subtle pulse effect */}
+        <div className="relative w-28 h-28 mb-8 overflow-hidden rounded-full animate-pulse shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+          <Image
+            src="/Mylogo.png"
+            alt="Ankush Maurya Logo"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
         {/* Premium Progress Bar */}
         <div className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden">
           <div

@@ -2,7 +2,7 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const inputImagePath = path.join(__dirname, 'public', 'Mylogo.jpeg');
+const inputImagePath = path.join(__dirname, 'public', 'Mylogo.png');
 const outputDir = path.join(__dirname, 'public');
 
 const icons = [
@@ -23,7 +23,7 @@ async function generateIcons() {
       await sharp(inputImagePath)
         .resize(icon.size, icon.size, {
           fit: 'contain',
-          background: { r: 255, g: 255, b: 255, alpha: 1 } // Using white background as it's a jpeg
+          background: { r: 0, g: 0, b: 0, alpha: 0 } // Transparent background
         })
         .toFile(outputPath);
       console.log(`Successfully generated ${icon.name}`);
