@@ -1,7 +1,14 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import Loader from "@/components/Loader";
 
+export const viewport = {
+  themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -43,6 +50,14 @@ export const metadata = {
     ],
     type: "website",
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Ankush Maurya | Portfolio",
+  },
+  formatDetection: {
+    telephone: false,
+  },
   twitter: {
     card: "summary_large_image",
     title: "Ankush Maurya | Portfolio",
@@ -56,6 +71,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Loader />
           {children}
         </ThemeProvider>
       </body>
