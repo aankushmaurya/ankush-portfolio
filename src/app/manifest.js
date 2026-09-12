@@ -1,8 +1,8 @@
 export default function manifest() {
   return {
-    name: 'Ankush Maurya | Portfolio',
-    short_name: 'Ankush',
-    description: 'Portfolio of Ankush Maurya, BNCET, Lucknow.',
+    name: 'Ankush Maurya | Full Stack Developer Lucknow',
+    short_name: 'Ankush Maurya',
+    description: 'Ankush Maurya – Full Stack Developer from Lucknow specializing in MERN stack, Next.js & scalable backend systems.',
     start_url: '/',
     display: 'standalone',
     background_color: '#000000',

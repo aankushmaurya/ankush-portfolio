@@ -1,7 +1,17 @@
+"use client";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { SiMongodb, SiTailwindcss, SiNextdotjs } from "react-icons/si";
+
+// Icon component map — avoids storing JSX in plain data objects (fixes SSR/prerender error)
+const ICON_MAP = {
+  NextJS: <SiNextdotjs className="text-white text-lg" />,
+  TailwindCSS: <SiTailwindcss className="text-sky-400 text-lg" />,
+  MongoDB: <SiMongodb className="text-emerald-400 text-lg" />,
+  HTML: <FaHtml5 className="text-orange-500 text-lg" />,
+  JavaScript: <SiJavascript className="text-yellow-300 text-lg" />,
+};
 
 function Project() {
   const projects = [
@@ -10,54 +20,34 @@ function Project() {
       title: "Healthcare Platform",
       highlight: "Live Client Project",
       description:
-        "Developed a public-facing hospital website with seamless online appointment booking.",
+        "Developed a full-featured hospital booking website for a live client using Next.js and MongoDB. The platform includes seamless online appointment scheduling, doctor listings, and a responsive UI — enabling patients to book consultations without phone calls.",
       image: "p1.png",
+      altText:
+        "Healthcare Platform – Hospital Booking Website built with Next.js, TailwindCSS and MongoDB",
       liveLink: "https://www.shivamakshayvat.in/",
-      techStack: [
-        { name: "NextJS", icon: <SiNextdotjs className="text-white text-lg" /> },
-        {
-          name: "TailwindCSS",
-          icon: <SiTailwindcss className="text-sky-400 text-lg" />,
-        },
-        {
-          name: "MongoDB",
-          icon: <SiMongodb className="text-emerald-400 text-lg" />,
-        },
-      ],
+      techStack: ["NextJS", "TailwindCSS", "MongoDB"],
     },
     {
       id: "02",
-      title: "TryOnAI",
+      title: "ResumeIQ",
       description:
-        "AI-powered platform that generates realistic fashion models from clothing images, helping brands visualize outfits without traditional photoshoots.",
-      image: "p2.png",
-      liveLink: "https://ai-cloth-model.vercel.app/",
-      techStack: [
-        { name: "NextJS", icon: <SiNextdotjs className="text-white text-lg" /> },
-        {
-          name: "TailwindCSS",
-          icon: <SiTailwindcss className="text-sky-400 text-lg" />,
-        },
-        {
-          name: "MongoDB",
-          icon: <SiMongodb className="text-emerald-400 text-lg" />,
-        },
-      ],
+        "An AI-powered ATS Resume Analyzer that parses resumes, matches them against job descriptions, and generates topic-wise interview questions. Built with vanilla HTML and JavaScript, it helps job seekers identify skill gaps and improve resume relevance for applicant tracking systems.",
+      image: "p3.png",
+      altText:
+        "ResumeIQ – AI-powered ATS Resume Analyzer built with HTML and JavaScript",
+      liveLink: "https://resume-iq-one-xi.vercel.app/",
+      techStack: ["HTML", "JavaScript"],
     },
     {
       id: "03",
-      title: "QR Code Generator",
+      title: "TryOnAI",
       description:
-        "A QR Code Generator that converts text, URLs, and other information into scannable QR codes instantly.",
-      image: "p3.png",
-      liveLink: "https://your-project-link-2.com",
-      techStack: [
-        { name: "HTML", icon: <FaHtml5 className="text-orange-500 text-lg" /> },
-        {
-          name: "JavaScript",
-          icon: <SiJavascript className="text-yellow-300 text-lg" />,
-        },
-      ],
+        "An AI-powered clothing visualization platform that generates realistic fashion models from product images. Built with Next.js and MongoDB, it allows clothing brands to visualize outfits on AI models — eliminating the need for expensive traditional photoshoots and accelerating product listings.",
+      image: "p2.png",
+      altText:
+        "TryOnAI – AI Fashion Model Generator App built with Next.js, TailwindCSS and MongoDB",
+      liveLink: "https://ai-cloth-model.vercel.app/",
+      techStack: ["NextJS", "TailwindCSS", "MongoDB"],
     },
   ];
 
@@ -69,9 +59,9 @@ function Project() {
       {/* Heading */}
       <div className="text-center mb-12">
         <p className="text-gray-300 tracking-wide">Browse My Recent</p>
-        <h1 className="text-4xl md:text-4xl font-extrabold text-pink-500 mt-2">
+        <h2 className="text-4xl md:text-4xl font-extrabold text-pink-500 mt-2">
           Projects
-        </h1>
+        </h2>
         <div className="w-24 h-1 bg-linear-to-r from-pink-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
       </div>
 
@@ -83,16 +73,15 @@ function Project() {
             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-4 md:p-6 shadow-lg hover:shadow-pink-500/10 transition duration-300"
           >
             <div
-              className={`flex flex-col gap-6 md:gap-10 items-center ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
+              className={`flex flex-col gap-6 md:gap-10 items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
             >
               {/* Image */}
               <div className="flex-1 w-full">
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/40 p-3">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.altText || project.title}
                     className="w-full h-64 sm:h-72 md:h-80 object-contain transition duration-500 group-hover:scale-[1.02]"
                   />
 
@@ -104,9 +93,9 @@ function Project() {
 
               {/* Content */}
               <div className="flex-1 w-full">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-400 mb-1">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-400 mb-1">
                   {project.title}
-                </h2>
+                </h3>
 
                 {project.highlight && (
                   <p className="text-sm md:text-base text-pink-300 font-medium mb-3">
@@ -133,13 +122,13 @@ function Project() {
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-3">
-                  {project.techStack.map((tech, techIndex) => (
+                  {project.techStack.map((techName) => (
                     <div
-                      key={techIndex}
+                      key={techName}
                       className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-black/20 text-gray-200 hover:bg-white/10 transition duration-300"
                     >
-                      {tech.icon}
-                      <span className="text-sm font-semibold">{tech.name}</span>
+                      {ICON_MAP[techName]}
+                      <span className="text-sm font-semibold">{techName}</span>
                     </div>
                   ))}
                 </div>
