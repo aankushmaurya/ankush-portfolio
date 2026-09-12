@@ -2,6 +2,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Loader from "@/components/Loader";
+import Script from "next/script";
 
 export const viewport = {
   themeColor: "#000000",
@@ -153,6 +154,20 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Scroll-reveal IntersectionObserver — pure JS, zero deps */}
+        <Script id="scroll-animations" strategy="afterInteractive">
+          {`(function(){
+            var o=new IntersectionObserver(function(entries){
+              entries.forEach(function(e){
+                if(e.isIntersecting){
+                  e.target.classList.add('in-view');
+                  o.unobserve(e.target);
+                }
+              });
+            },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+            document.querySelectorAll('.animate-section').forEach(function(el){o.observe(el);});
+          })();`}
+        </Script>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Loader />
           {children}

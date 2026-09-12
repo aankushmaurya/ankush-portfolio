@@ -28,7 +28,7 @@ export default function Intro() {
 
       <div className="relative max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-16">
         {/* PROFILE IMAGE */}
-        <div className="shrink-0">
+        <div className="shrink-0 profile-float">
           <div className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-[#3b557d]">
             <img
               src="/me.jpeg"
